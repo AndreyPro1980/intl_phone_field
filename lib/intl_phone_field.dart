@@ -410,16 +410,11 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
 
         widget.onChanged?.call(phoneNumber);
       },
-      validator: (value) async{
-        final phoneNumber = PhoneNumber(
-          countryISOCode: _selectedCountry.code,
-          countryCode: '+${_selectedCountry.dialCode}',
-          number: value!,
-        );
+      validator: (value) {
         if (!widget.disableLengthCheck && value != null) {
           return value.length >= _selectedCountry.minLength &&
                   value.length <= _selectedCountry.maxLength
-              ? await widget.validator?.call(phoneNumber)
+              ? validatorMessage
               : widget.invalidNumberMessage;
         }
 

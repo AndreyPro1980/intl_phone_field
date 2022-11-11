@@ -43,7 +43,7 @@ class IntlPhoneField extends StatefulWidget {
   /// Or run synchronously when declared as a [Function].
   ///
   /// By default, the validator checks whether the input number length is between selected country's phone numbers min and max length.
-  /// If `disableLengthCheck` is not set to `true`, your validator returned value will be overwritten by the default validator.
+  /// If `disableLengthCheck` is not set to `true`, your validator's result will be shown only if the default validation is valid.
   /// But, if `disableLengthCheck` is set to `true`, your validator will have to check phone number length itself.
   final FutureOr<String?> Function(PhoneNumber?)? validator;
 

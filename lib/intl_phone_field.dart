@@ -419,7 +419,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
         if (!widget.disableLengthCheck && value != null) {
           return value.length >= _selectedCountry.minLength &&
                   value.length <= _selectedCountry.maxLength
-              ? widget.validator?.call(phoneNumber)
+              ? await widget.validator?.call(phoneNumber)
               : widget.invalidNumberMessage;
         }
 

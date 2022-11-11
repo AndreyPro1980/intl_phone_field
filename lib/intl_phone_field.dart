@@ -414,7 +414,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
         final phoneNumber = PhoneNumber(
           countryISOCode: _selectedCountry.code,
           countryCode: '+${_selectedCountry.dialCode}',
-          number: value,
+          number: value!,
         );
         if (!widget.disableLengthCheck && value != null) {
           return value.length >= _selectedCountry.minLength &&
